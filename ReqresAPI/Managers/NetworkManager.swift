@@ -14,7 +14,7 @@ class NetworkManager{
     
     private init() {}
     
-    func getUsersData(from endpoint: String, completed: @escaping (Result<User, CustomErrors>) -> Void){
+    func getUsersData(completed: @escaping (Result<User, CustomErrors>) -> Void){
         guard let url = URL(string: endpoint) else{
             completed(.failure(.unableToComplete))
             return

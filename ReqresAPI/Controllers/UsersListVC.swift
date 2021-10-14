@@ -13,11 +13,13 @@ class UsersListVC: UIViewController {
     var userTableView: UITableView!
     
     
+    
     //MARK: - VC Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
         configureTableView()
+        getUsersInfo()
     }
     
     
@@ -40,6 +42,19 @@ class UsersListVC: UIViewController {
             userTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             userTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    
+    //MARK: - Network Call
+    func getUsersInfo(){
+        NetworkManager.shared.getUsersData { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result{
+            case .success(let userData): print("SUCCESS")
+            case .failure(let error): print("\(error), you peace of shit")
+            }
+        }
     }
 }
 
