@@ -15,7 +15,7 @@
 		8800BC712718617D00460B5F /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC702718617D00460B5F /* UsersModel.swift */; };
 		8800BC742718619500460B5F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC732718619500460B5F /* UserCell.swift */; };
 		8800BC77271861B900460B5F /* CustomTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC76271861B900460B5F /* CustomTitleLabel.swift */; };
-		8800BC7A271861D900460B5F /* UsersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC79271861D900460B5F /* UsersTableVC.swift */; };
+		8800BC7A271861D900460B5F /* UsersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC79271861D900460B5F /* UsersListVC.swift */; };
 		8800BC7C271861EB00460B5F /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC7B271861EB00460B5F /* UserDetailVC.swift */; };
 		8800BC7F2718622100460B5F /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC7E2718622100460B5F /* CustomErrors.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		8800BC702718617D00460B5F /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		8800BC732718619500460B5F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		8800BC76271861B900460B5F /* CustomTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleLabel.swift; sourceTree = "<group>"; };
-		8800BC79271861D900460B5F /* UsersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableVC.swift; sourceTree = "<group>"; };
+		8800BC79271861D900460B5F /* UsersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListVC.swift; sourceTree = "<group>"; };
 		8800BC7B271861EB00460B5F /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
 		8800BC7E2718622100460B5F /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 		8800BC682718613A00460B5F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8800BC79271861D900460B5F /* UsersTableVC.swift */,
+				8800BC79271861D900460B5F /* UsersListVC.swift */,
 				8800BC7B271861EB00460B5F /* UserDetailVC.swift */,
 			);
 			path = Controllers;
@@ -228,7 +228,7 @@
 				8800BC7F2718622100460B5F /* CustomErrors.swift in Sources */,
 				8800BC77271861B900460B5F /* CustomTitleLabel.swift in Sources */,
 				8800BC6E2718616200460B5F /* NetworkManager.swift in Sources */,
-				8800BC7A271861D900460B5F /* UsersTableVC.swift in Sources */,
+				8800BC7A271861D900460B5F /* UsersListVC.swift in Sources */,
 				8800BC54271860E800460B5F /* AppDelegate.swift in Sources */,
 				8800BC712718617D00460B5F /* UsersModel.swift in Sources */,
 				8800BC742718619500460B5F /* UserCell.swift in Sources */,
