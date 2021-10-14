@@ -17,6 +17,7 @@ class UserCell: UITableViewCell {
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -31,15 +32,15 @@ class UserCell: UITableViewCell {
         fullName.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            fullName.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
-            fullName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
-            fullName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            fullName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
+            fullName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            fullName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            fullName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            fullName.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
     
     func set(list: [UserData], index: Int){
-        fullName.text = list[index].first_name + " " + list[index].last_name
+        fullName.text = "\(list[index].first_name) \(list[index].last_name)"
     }
 }

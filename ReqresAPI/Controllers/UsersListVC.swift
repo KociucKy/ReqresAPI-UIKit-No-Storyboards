@@ -20,12 +20,13 @@ class UsersListVC: UIViewController {
         super.viewDidLoad()
         configureVC()
         configureTableView()
+        getUsersInfo()
     }
     
     
     //MARK: - Methods
     func configureVC(){
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -33,17 +34,17 @@ class UsersListVC: UIViewController {
     func configureTableView(){
         userTableView = UITableView()
         userTableView.dataSource = self
-        userTableView.backgroundColor  = .secondarySystemBackground
+        userTableView.delegate = self
+        userTableView.backgroundColor  = .systemBackground
         userTableView.separatorStyle = .none
-        getUsersInfo()
         
         view.addSubview(userTableView)
         userTableView.register(UserCell.self, forCellReuseIdentifier: UserCell.reuseID)
         userTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             userTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            userTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            userTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            userTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            userTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
             userTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -55,7 +56,10 @@ class UsersListVC: UIViewController {
             guard let self = self else { return }
             
             switch result{
-            case .success(let userData): print("SUCCESS")
+            case .success(let userData):
+                let list = userData.data
+                self.userInfo.append(contentsOf: list)
+                DispatchQueue.main.async{ self.userTableView.reloadData() }
             case .failure(let error): print("\(error), you peace of shit")
             }
         }
@@ -82,7 +86,7 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
+        return 1.0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,7 +95,7 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableView.dequeueReusableCell(withIdentifier: UserCell.reuseID, for: indexPath) as! UserCell
-        cell.backgroundColor = .systemBackground
+        cell.backgroundColor = .secondarySystemBackground
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
         cell.set(list: userInfo, index: indexPath.section)
