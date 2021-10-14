@@ -20,13 +20,12 @@ class UsersListVC: UIViewController {
         super.viewDidLoad()
         configureVC()
         configureTableView()
-        getUsersInfo()
     }
     
     
     //MARK: - Methods
     func configureVC(){
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .secondarySystemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -34,8 +33,12 @@ class UsersListVC: UIViewController {
     func configureTableView(){
         userTableView = UITableView()
         userTableView.dataSource = self
+        userTableView.backgroundColor  = .secondarySystemBackground
+        userTableView.separatorStyle = .none
+        getUsersInfo()
         
         view.addSubview(userTableView)
+        userTableView.register(UserCell.self, forCellReuseIdentifier: UserCell.reuseID)
         userTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             userTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -65,7 +68,7 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
     
     //I'm using Sections with one row inside, to give cells a padding between them
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return userInfo.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,8 +90,11 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .systemGreen
+        let cell = userTableView.dequeueReusableCell(withIdentifier: UserCell.reuseID, for: indexPath) as! UserCell
+        cell.backgroundColor = .systemBackground
+        cell.layer.cornerRadius = 20
+        cell.clipsToBounds = true
+        cell.set(list: userInfo, index: indexPath.section)
         return cell
     }
     
