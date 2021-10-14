@@ -11,6 +11,7 @@ class UsersListVC: UIViewController {
     
     //MARK: - Properties
     var userTableView: UITableView!
+    var userInfo: [UserData] = []
     
     
     
@@ -60,9 +61,29 @@ class UsersListVC: UIViewController {
 
 
 //MARK: - UITableView DataSource and Delegate Methods
-extension UsersListVC: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
+    
+    //I'm using Sections with one row inside, to give cells a padding between them
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 6
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,5 +92,7 @@ extension UsersListVC: UITableViewDataSource{
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //More on later
+    }
 }
