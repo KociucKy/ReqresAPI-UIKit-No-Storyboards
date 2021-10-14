@@ -28,7 +28,7 @@ class CustomBodyLabel: UILabel {
     //MARK: - Methods
     private func configure(){
         textColor                   = .secondaryLabel
-        font                        = UIFont.preferredFont(forTextStyle: .caption1)
+        font                        = UIFont.preferredFont(forTextStyle: .title3)
         adjustsFontSizeToFitWidth   = true
         minimumScaleFactor          = 0.75
         lineBreakMode               = .byWordWrapping

@@ -98,11 +98,20 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
         cell.backgroundColor = .secondarySystemBackground
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
+        cell.selectionStyle = .none
         cell.set(list: userInfo, index: indexPath.section)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //More on later
+        let destVC = UserDetailVC()
+        destVC.firstName = userInfo[indexPath.section].first_name
+        destVC.lastName = userInfo[indexPath.section].last_name
+        destVC.email = userInfo[indexPath.section].email
+        
+        let navController = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true)
+        
+        userTableView.deselectRow(at: indexPath, animated: true)
     }
 }
