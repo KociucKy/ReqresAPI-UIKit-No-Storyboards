@@ -22,7 +22,7 @@ In this app I wanted to demonstrate my skills in working with API and also in bu
 
 
 ### Screenshots
-<img src="Image/Screenshots.png">
+<img src="Screenshots/Image.png">
 <br>
 <br>
 <br>
