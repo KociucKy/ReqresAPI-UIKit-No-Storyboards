@@ -21,15 +21,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="dNU-lI-4fX">
-                                        <rect key="frame" x="82" y="301" width="250" height="250"/>
+                                        <rect key="frame" x="82" y="323" width="250" height="250"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="GgZ-BI-FcD"/>
-                                            <constraint firstAttribute="width" constant="250" id="IMy-2Z-eUB"/>
+                                            <constraint firstAttribute="width" constant="250" id="E5r-RL-Sto"/>
+                                            <constraint firstAttribute="height" constant="250" id="z7r-Y5-Gi4"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReqresAPI Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diR-D3-ijf">
-                                        <rect key="frame" x="98.5" y="559" width="218.5" height="36"/>
+                                        <rect key="frame" x="98" y="581" width="218.5" height="36"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="TGX-eP-ftL"/>
                                             <constraint firstAttribute="height" constant="36" id="xvF-Uy-a83"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -39,11 +40,10 @@
                                 </subviews>
                                 <color key="backgroundColor" name="LaunchScreenBackground"/>
                                 <constraints>
-                                    <constraint firstItem="diR-D3-ijf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ehW-dV-E6V" secondAttribute="leading" id="01A-B9-oCz"/>
-                                    <constraint firstItem="diR-D3-ijf" firstAttribute="top" secondItem="dNU-lI-4fX" secondAttribute="bottom" constant="8" id="6gL-62-w2q"/>
-                                    <constraint firstAttribute="trailing" secondItem="diR-D3-ijf" secondAttribute="trailing" constant="97" id="aQm-cz-Ks8"/>
-                                    <constraint firstItem="dNU-lI-4fX" firstAttribute="centerX" secondItem="ehW-dV-E6V" secondAttribute="centerX" id="mFR-yh-9Ns"/>
-                                    <constraint firstItem="dNU-lI-4fX" firstAttribute="top" secondItem="ehW-dV-E6V" secondAttribute="top" constant="301" id="xBp-YK-1Ll"/>
+                                    <constraint firstItem="dNU-lI-4fX" firstAttribute="centerX" secondItem="ehW-dV-E6V" secondAttribute="centerX" id="E8d-TR-wEZ"/>
+                                    <constraint firstItem="dNU-lI-4fX" firstAttribute="centerY" secondItem="ehW-dV-E6V" secondAttribute="centerY" id="WJS-cd-mwo"/>
+                                    <constraint firstItem="diR-D3-ijf" firstAttribute="top" secondItem="dNU-lI-4fX" secondAttribute="bottom" constant="8" id="f1h-tQ-CN6"/>
+                                    <constraint firstItem="diR-D3-ijf" firstAttribute="centerX" secondItem="ehW-dV-E6V" secondAttribute="centerX" id="hTc-tJ-aNC"/>
                                 </constraints>
                             </view>
                         </subviews>
