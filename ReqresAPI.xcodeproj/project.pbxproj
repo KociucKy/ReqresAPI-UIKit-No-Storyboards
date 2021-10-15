@@ -19,6 +19,8 @@
 		8800BC7C271861EB00460B5F /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC7B271861EB00460B5F /* UserDetailVC.swift */; };
 		8800BC7F2718622100460B5F /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC7E2718622100460B5F /* CustomErrors.swift */; };
 		8800BC812718738900460B5F /* CustomBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC802718738900460B5F /* CustomBodyLabel.swift */; };
+		8800BC8427198DC500460B5F /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC8327198DC500460B5F /* UIViewController+Ext.swift */; };
+		8800BC8627198E4200460B5F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800BC8527198E4200460B5F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		8800BC7B271861EB00460B5F /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
 		8800BC7E2718622100460B5F /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		8800BC802718738900460B5F /* CustomBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBodyLabel.swift; sourceTree = "<group>"; };
+		8800BC8327198DC500460B5F /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		8800BC8527198E4200460B5F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				8800BC7E2718622100460B5F /* CustomErrors.swift */,
+				8800BC8327198DC500460B5F /* UIViewController+Ext.swift */,
+				8800BC8527198E4200460B5F /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				8800BC7C271861EB00460B5F /* UserDetailVC.swift in Sources */,
 				8800BC7F2718622100460B5F /* CustomErrors.swift in Sources */,
 				8800BC77271861B900460B5F /* CustomTitleLabel.swift in Sources */,
+				8800BC8427198DC500460B5F /* UIViewController+Ext.swift in Sources */,
 				8800BC812718738900460B5F /* CustomBodyLabel.swift in Sources */,
 				8800BC6E2718616200460B5F /* NetworkManager.swift in Sources */,
 				8800BC7A271861D900460B5F /* UsersListVC.swift in Sources */,
@@ -237,6 +244,7 @@
 				8800BC712718617D00460B5F /* UsersModel.swift in Sources */,
 				8800BC742718619500460B5F /* UserCell.swift in Sources */,
 				8800BC56271860E800460B5F /* SceneDelegate.swift in Sources */,
+				8800BC8627198E4200460B5F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

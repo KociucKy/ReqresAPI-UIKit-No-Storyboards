@@ -43,8 +43,8 @@ class UsersListVC: UIViewController {
         userTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             userTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            userTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            userTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            userTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: K.TableView.tableViewHorizontalPadding),
+            userTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -K.TableView.tableViewHorizontalPadding),
             userTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -60,7 +60,8 @@ class UsersListVC: UIViewController {
                 let list = userData.data
                 self.userInfo.append(contentsOf: list)
                 DispatchQueue.main.async{ self.userTableView.reloadData() }
-            case .failure(let error): print("\(error), you peace of shit")
+            case .failure(let error):
+                self.displayAnAlert(title: K.Alerts.anErrorOccured, message: error.rawValue, action: K.Alerts.alertAction)
             }
         }
     }
@@ -76,7 +77,7 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return K.TableView.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -86,17 +87,17 @@ extension UsersListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1.0
+        return K.TableView.paddingBetweenCells
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return K.TableView.rowHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableView.dequeueReusableCell(withIdentifier: UserCell.reuseID, for: indexPath) as! UserCell
         cell.backgroundColor = .secondarySystemBackground
-        cell.layer.cornerRadius = 20
+        cell.layer.cornerRadius = K.TableView.cellCornerRadius
         cell.clipsToBounds = true
         cell.selectionStyle = .none
         cell.set(list: userInfo, index: indexPath.section)

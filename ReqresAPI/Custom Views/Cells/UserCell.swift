@@ -11,7 +11,7 @@ class UserCell: UITableViewCell {
 
     //MARK: - UI Elements
     static let reuseID = "UserCell"
-    let fullName = CustomTitleLabel(fontSize: 20, textAlignment: .left)
+    let fullName = CustomTitleLabel(fontSize: K.Labels.labelFontSize, textAlignment: .left)
     
     
     //MARK: - Initializers
@@ -32,10 +32,10 @@ class UserCell: UITableViewCell {
         fullName.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            fullName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            fullName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            fullName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
-            fullName.heightAnchor.constraint(equalToConstant: 30)
+            fullName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: K.Labels.labelHorizontalPadding),
+            fullName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: K.Labels.labelHorizontalPadding),
+            fullName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -K.Labels.labelHorizontalPadding),
+            fullName.heightAnchor.constraint(equalToConstant: K.Labels.labelHeight)
         ])
     }
     
